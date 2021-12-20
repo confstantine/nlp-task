@@ -193,10 +193,10 @@ class TMPredictor(object):
 
                 preds.append(indices.cpu().numpy()[0][0])
                 rank = indices.cpu().numpy()[0]
-                rank_dict = {_index: _index for _index, _index in enumerate(rank)}
+                rank_dict = {_index: prob for _index, prob in zip(rank, probs.cpu().numpy()[0])}
                 probas.append([rank_dict[_index] for _index in range(len(rank))])
 
-        most_ = Counter(preds).most_common(35)
+        most_ = Counter(preds).most_common(len(self.id2cat))
         #         print(most_)
 
         max_vote_num = most_[0][1]
@@ -208,12 +208,12 @@ class TMPredictor(object):
             vote_label_idx.append(most_[0][0])
         else:
             prob_list_np = np.array(probas)
-            select_rank = 10000
+            select_rank = -10000
             select_m = 10000
             for m, num in most_:
                 # 拿概率第m列（所有模型对第m列的概率）求和
                 prob_m = prob_list_np[:, m]
-                if sum(prob_m) < select_rank:
+                if sum(prob_m) > select_rank:
                     select_m = m
                     select_rank = sum(prob_m)
 

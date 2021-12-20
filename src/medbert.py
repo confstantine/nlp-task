@@ -80,46 +80,46 @@ if __name__ == "__main__":
         tm_dataset.convert_to_ids(tokenizer)
         pickle.dump(tm_dataset, open("../cache/tm_dataset.pkl", "wb"))
 
-    kf = KFold(5, shuffle=True, random_state=42)
-    examples = copy.deepcopy(tm_dataset.dataset)
-    for fold_, (train_ids, dev_ids) in enumerate(kf.split(examples)):
-        print(f"start fold{fold_}")
-        tm_train_dataset.dataset = [examples[_idx] for _idx in train_ids]
-        tm_dev_dataset.dataset = [examples[_idx] for _idx in dev_ids]
-
-        bert_config = BertConfig.from_pretrained(model_name_or_path,
-                                                 num_labels=len(tm_train_dataset.cat2id))
-        bert_config.gradient_checkpointing = True
-        dl_module = Bert.from_pretrained(model_name_or_path,
-                                         config=bert_config)
-        # freeze_params(dl_module.bert.embeddings)
-        param_optimizer = list(dl_module.named_parameters())
-        param_optimizer = [n for n in param_optimizer if 'pooler' not in n[0]]
-        no_decay = ["bias", "LayerNorm.weight"]
-        optimizer_grouped_parameters = [
-            {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)],
-             'weight_decay': 0.01},
-            {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
-        ]
-
-        model = SequenceClassificationTask(dl_module, 'adamw', 'lsce', cuda_device=0, ema_decay=0.995)
-
-        save_module_path = '../checkpoint/medbert2/'
-        os.makedirs(save_module_path, exist_ok=True)
-        model.fit(tm_train_dataset,
-                  tm_dev_dataset,
-                  lr=2e-5,
-                  epochs=1,
-                  batch_size=64,
-                  params=optimizer_grouped_parameters,
-                  evaluate_save=True,
-                  save_module_path=save_module_path + str(fold_) + '.pth'
-                  )
-
-        del dl_module
-        del model
-        gc.collect()
-        torch.cuda.empty_cache()
+    # kf = KFold(5, shuffle=True, random_state=42)
+    # examples = copy.deepcopy(tm_dataset.dataset)
+    # for fold_, (train_ids, dev_ids) in enumerate(kf.split(examples)):
+    #     print(f"start fold{fold_}")
+    #     tm_train_dataset.dataset = [examples[_idx] for _idx in train_ids]
+    #     tm_dev_dataset.dataset = [examples[_idx] for _idx in dev_ids]
+    #
+    #     bert_config = BertConfig.from_pretrained(model_name_or_path,
+    #                                              num_labels=len(tm_train_dataset.cat2id))
+    #     bert_config.gradient_checkpointing = True
+    #     dl_module = Bert.from_pretrained(model_name_or_path,
+    #                                      config=bert_config)
+    #     # freeze_params(dl_module.bert.embeddings)
+    #     param_optimizer = list(dl_module.named_parameters())
+    #     param_optimizer = [n for n in param_optimizer if 'pooler' not in n[0]]
+    #     no_decay = ["bias", "LayerNorm.weight"]
+    #     optimizer_grouped_parameters = [
+    #         {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)],
+    #          'weight_decay': 0.01},
+    #         {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
+    #     ]
+    #
+    #     model = SequenceClassificationTask(dl_module, 'adamw', 'lsce', cuda_device=0, ema_decay=0.995)
+    #
+    #     save_module_path = '../checkpoint/medbert2/'
+    #     os.makedirs(save_module_path, exist_ok=True)
+    #     model.fit(tm_train_dataset,
+    #               tm_dev_dataset,
+    #               lr=2e-5,
+    #               epochs=1,
+    #               batch_size=64,
+    #               params=optimizer_grouped_parameters,
+    #               evaluate_save=True,
+    #               save_module_path=save_module_path + str(fold_) + '.pth'
+    #               )
+    #
+    #     del dl_module
+    #     del model
+    #     gc.collect()
+    #     torch.cuda.empty_cache()
 
     # predict
     ensemble_dl_modules = []
