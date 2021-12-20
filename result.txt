@@ -1,0 +1,294 @@
+start fold0
+Some weights of the model checkpoint at ../pretrained_models/medbert were not used when initializing Bert: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dens
+e.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.seq_
+relationship.bias']
+- This IS expected if you are initializing Bert from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPr
+eTraining model).
+- This IS NOT expected if you are initializing Bert from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassifi
+cation model).
+Some weights of Bert were not initialized from the model checkpoint at ../pretrained_models/medbert and are newly initialized: ['classifier.weight', 'classifier.bias', 'relative_pos_embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  7%|██████████▉                                                                                                                                                          | 99/1488 [02:09<30:14,  1.31s/it][
+99/1488],train loss is:0.964379
+ 13%|█████████████████████▉                                                                                                                                              | 199/1488 [04:20<28:04,  1.31s/it][
+199/1488],train loss is:0.851013
+ 20%|████████████████████████████████▉                                                                                                                                   | 299/1488 [06:31<25:57,  1.31s/it][
+299/1488],train loss is:0.798130
+ 27%|███████████████████████████████████████████▉                                                                                                                        | 399/1488 [08:42<23:44,  1.31s/it][
+399/1488],train loss is:0.770364
+ 34%|██████████████████████████████████████████████████████▉                                                                                                             | 499/1488 [10:53<21:35,  1.31s/it][
+499/1488],train loss is:0.749173
+ 40%|██████████████████████████████████████████████████████████████████                                                                                                  | 599/1488 [13:04<19:26,  1.31s/it][
+599/1488],train loss is:0.732649
+ 47%|█████████████████████████████████████████████████████████████████████████████                                                                                       | 699/1488 [15:15<17:12,  1.31s/it][
+699/1488],train loss is:0.722878
+ 54%|████████████████████████████████████████████████████████████████████████████████████████                                                                            | 799/1488 [17:26<15:03,  1.31s/it][
+799/1488],train loss is:0.712465
+ 60%|███████████████████████████████████████████████████████████████████████████████████████████████████                                                                 | 899/1488 [19:38<12:52,  1.31s/it][
+899/1488],train loss is:0.705382
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                      | 999/1488 [21:49<10:41,  1.31s/it][
+999/1488],train loss is:0.698703
+ 74%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                          | 1099/1488 [24:00<08:29,  1.31s/it][
+1099/1488],train loss is:0.692426
+ 81%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                               | 1199/1488 [26:11<06:18,  1.31s/it][
+1199/1488],train loss is:0.687730
+ 87%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                    | 1299/1488 [28:22<04:08,  1.31s/it][
+1299/1488],train loss is:0.683646
+ 94%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 1399/1488 [30:33<01:56,  1.31s/it][
+1399/1488],train loss is:0.680180
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1488/1488 [32:29<00:00,  1.31s/it]
+epoch:[0],train loss is:0.676711
+
+classification_report:
+               precision    recall  f1-score   support
+
+         不标注       0.77      0.73      0.75      4782
+          其他       0.60      0.55      0.58      1275
+          阳性       0.90      0.92      0.91     14971
+          阴性       0.83      0.84      0.83      2768
+
+    accuracy                           0.85     23796
+   macro avg       0.78      0.76      0.77     23796
+weighted avg       0.85      0.85      0.85     23796
+
+confusion_matrix_:
+ [[ 3489    96  1062   135]
+ [  127   703   285   160]
+ [  805   224 13755   187]
+ [   98   141   204  2325]]
+test loss is:0.618080,test acc is:0.851908,f1_score is:0.767350
+start fold1
+Some weights of the model checkpoint at ../pretrained_models/medbert were not used when initializing Bert: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dens
+e.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.seq_
+relationship.bias']
+- This IS expected if you are initializing Bert from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPr
+eTraining model).
+- This IS NOT expected if you are initializing Bert from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassifi
+cation model).
+Some weights of Bert were not initialized from the model checkpoint at ../pretrained_models/medbert and are newly initialized: ['classifier.weight', 'classifier.bias', 'relative_pos_embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  7%|██████████▉                                                                                                                                                          | 99/1488 [02:09<30:18,  1.31s/it][
+99/1488],train loss is:1.039122
+ 13%|█████████████████████▉                                                                                                                                              | 199/1488 [04:20<28:05,  1.31s/it][
+199/1488],train loss is:0.901353
+ 20%|████████████████████████████████▉                                                                                                                                   | 299/1488 [06:32<25:56,  1.31s/it][
+299/1488],train loss is:0.833485
+ 27%|███████████████████████████████████████████▉                                                                                                                        | 399/1488 [08:43<23:48,  1.31s/it][
+399/1488],train loss is:0.795382
+ 34%|██████████████████████████████████████████████████████▉                                                                                                             | 499/1488 [10:54<21:35,  1.31s/it][
+499/1488],train loss is:0.768851
+ 40%|██████████████████████████████████████████████████████████████████                                                                                                  | 599/1488 [13:05<19:23,  1.31s/it][
+599/1488],train loss is:0.748616
+ 47%|█████████████████████████████████████████████████████████████████████████████                                                                                       | 699/1488 [15:16<17:09,  1.30s/it][
+699/1488],train loss is:0.734811
+ 54%|████████████████████████████████████████████████████████████████████████████████████████                                                                            | 799/1488 [17:26<15:01,  1.31s/it][
+799/1488],train loss is:0.724695
+ 60%|███████████████████████████████████████████████████████████████████████████████████████████████████                                                                 | 899/1488 [19:37<12:51,  1.31s/it][
+899/1488],train loss is:0.716345
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                      | 999/1488 [21:48<10:39,  1.31s/it][
+999/1488],train loss is:0.708161
+ 74%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                          | 1099/1488 [23:59<08:28,  1.31s/it][
+1099/1488],train loss is:0.702301
+ 81%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                               | 1199/1488 [26:10<06:17,  1.31s/it][
+1199/1488],train loss is:0.697267
+ 87%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                    | 1299/1488 [28:20<04:07,  1.31s/it][
+1299/1488],train loss is:0.692722
+ 94%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 1399/1488 [30:31<01:56,  1.31s/it][
+1399/1488],train loss is:0.689319
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1488/1488 [32:27<00:00,  1.31s/it]
+epoch:[0],train loss is:0.685849
+
+classification_report:
+               precision    recall  f1-score   support
+
+         不标注       0.78      0.72      0.75      4727
+          其他       0.64      0.51      0.57      1210
+          阳性       0.89      0.93      0.91     15024
+          阴性       0.83      0.85      0.84      2834
+
+    accuracy                           0.86     23795
+   macro avg       0.79      0.75      0.77     23795
+weighted avg       0.85      0.86      0.85     23795
+
+confusion_matrix_:
+ [[ 3407    79  1124   117]
+ [  142   613   305   150]
+ [  703   158 13946   217]
+ [  110   103   222  2399]]
+test loss is:0.613812,test acc is:0.855852,f1_score is:0.766658
+start fold2
+Some weights of the model checkpoint at ../pretrained_models/medbert were not used when initializing Bert: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dens
+e.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.seq_
+relationship.bias']
+- This IS expected if you are initializing Bert from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPr
+eTraining model).
+- This IS NOT expected if you are initializing Bert from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassifi
+cation model).
+Some weights of Bert were not initialized from the model checkpoint at ../pretrained_models/medbert and are newly initialized: ['classifier.weight', 'classifier.bias', 'relative_pos_embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  7%|██████████▉                                                                                                                                                          | 99/1488 [02:09<30:15,  1.31s/it][
+99/1488],train loss is:1.015694
+ 13%|█████████████████████▉                                                                                                                                              | 199/1488 [04:20<28:06,  1.31s/it][
+199/1488],train loss is:0.889069
+ 20%|████████████████████████████████▉                                                                                                                                   | 299/1488 [06:31<25:56,  1.31s/it][
+299/1488],train loss is:0.825913
+ 27%|███████████████████████████████████████████▉                                                                                                                        | 399/1488 [08:41<23:46,  1.31s/it][
+399/1488],train loss is:0.789546
+ 34%|██████████████████████████████████████████████████████▉                                                                                                             | 499/1488 [10:52<21:35,  1.31s/it][
+499/1488],train loss is:0.766340
+ 40%|██████████████████████████████████████████████████████████████████                                                                                                  | 599/1488 [13:03<19:20,  1.31s/it][
+599/1488],train loss is:0.749027
+ 47%|█████████████████████████████████████████████████████████████████████████████                                                                                       | 699/1488 [15:14<17:11,  1.31s/it][
+699/1488],train loss is:0.733470
+ 54%|████████████████████████████████████████████████████████████████████████████████████████                                                                            | 799/1488 [17:25<14:58,  1.30s/it][
+799/1488],train loss is:0.723461
+ 60%|███████████████████████████████████████████████████████████████████████████████████████████████████                                                                 | 899/1488 [19:35<12:51,  1.31s/it][
+899/1488],train loss is:0.715595
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                      | 999/1488 [21:46<10:38,  1.31s/it][
+999/1488],train loss is:0.708813
+ 74%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                          | 1099/1488 [23:57<08:29,  1.31s/it][
+1099/1488],train loss is:0.703097
+ 81%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                               | 1199/1488 [26:08<06:17,  1.31s/it][
+1199/1488],train loss is:0.697886
+ 87%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                    | 1299/1488 [28:19<04:06,  1.31s/it][
+1299/1488],train loss is:0.692730
+ 94%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 1399/1488 [30:29<01:56,  1.31s/it][
+1399/1488],train loss is:0.688047
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1488/1488 [32:25<00:00,  1.31s/it]
+epoch:[0],train loss is:0.684465
+
+classification_report:
+               precision    recall  f1-score   support
+
+         不标注       0.78      0.71      0.74      4820
+          其他       0.61      0.51      0.56      1187
+          阳性       0.89      0.92      0.91     14970
+          阴性       0.81      0.85      0.83      2818
+
+    accuracy                           0.85     23795
+   macro avg       0.77      0.75      0.76     23795
+weighted avg       0.85      0.85      0.85     23795
+
+confusion_matrix_:
+ [[ 3417    69  1162   172]
+ [  131   609   285   162]
+ [  772   196 13794   208]
+ [   79   129   225  2385]]
+test loss is:0.618425,test acc is:0.849128,f1_score is:0.758543
+start fold3
+Some weights of the model checkpoint at ../pretrained_models/medbert were not used when initializing Bert: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dens
+e.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.seq_
+relationship.bias']
+- This IS expected if you are initializing Bert from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPr
+eTraining model).
+- This IS NOT expected if you are initializing Bert from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassifi
+cation model).
+Some weights of Bert were not initialized from the model checkpoint at ../pretrained_models/medbert and are newly initialized: ['classifier.weight', 'classifier.bias', 'relative_pos_embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  7%|██████████▉                                                                                                                                                          | 99/1488 [02:09<30:21,  1.31s/it][
+99/1488],train loss is:1.030478
+ 13%|█████████████████████▉                                                                                                                                              | 199/1488 [04:20<28:03,  1.31s/it][
+199/1488],train loss is:0.897338
+ 20%|████████████████████████████████▉                                                                                                                                   | 299/1488 [06:31<25:52,  1.31s/it][
+299/1488],train loss is:0.833000
+ 27%|███████████████████████████████████████████▉                                                                                                                        | 399/1488 [08:42<23:42,  1.31s/it][
+399/1488],train loss is:0.796462
+ 34%|██████████████████████████████████████████████████████▉                                                                                                             | 499/1488 [10:52<21:33,  1.31s/it][
+499/1488],train loss is:0.771123
+ 40%|██████████████████████████████████████████████████████████████████                                                                                                  | 599/1488 [13:03<19:24,  1.31s/it][
+599/1488],train loss is:0.754266
+ 47%|█████████████████████████████████████████████████████████████████████████████                                                                                       | 699/1488 [15:14<17:11,  1.31s/it][
+699/1488],train loss is:0.740405
+ 54%|████████████████████████████████████████████████████████████████████████████████████████                                                                            | 799/1488 [17:25<15:02,  1.31s/it][
+799/1488],train loss is:0.729690
+ 60%|███████████████████████████████████████████████████████████████████████████████████████████████████                                                                 | 899/1488 [19:36<12:52,  1.31s/it][
+899/1488],train loss is:0.720814
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                      | 999/1488 [21:46<10:38,  1.31s/it][
+999/1488],train loss is:0.713740
+ 74%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                          | 1099/1488 [23:57<08:29,  1.31s/it][
+1099/1488],train loss is:0.706004
+ 81%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                               | 1199/1488 [26:08<06:17,  1.31s/it][
+1199/1488],train loss is:0.700704
+ 87%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                    | 1299/1488 [28:19<04:07,  1.31s/it][
+1299/1488],train loss is:0.695737
+ 94%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 1399/1488 [30:30<01:56,  1.31s/it][
+1399/1488],train loss is:0.691831
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1488/1488 [32:25<00:00,  1.31s/it]
+epoch:[0],train loss is:0.686838
+
+classification_report:
+               precision    recall  f1-score   support
+
+         不标注       0.78      0.73      0.76      4822
+          其他       0.62      0.54      0.58      1292
+          阳性       0.90      0.92      0.91     14891
+          阴性       0.81      0.84      0.83      2790
+
+    accuracy                           0.85     23795
+   macro avg       0.78      0.76      0.77     23795
+weighted avg       0.85      0.85      0.85     23795
+
+confusion_matrix_:
+ [[ 3534    91  1035   162]
+ [  123   696   307   166]
+ [  808   179 13692   212]
+ [   74   150   209  2357]]
+test loss is:0.617458,test acc is:0.852238,f1_score is:0.767692
+start fold4
+Some weights of the model checkpoint at ../pretrained_models/medbert were not used when initializing Bert: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dens
+e.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.decoder.bias', 'cls.seq_relationship.weight', 'cls.seq_
+relationship.bias']
+- This IS expected if you are initializing Bert from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPr
+eTraining model).
+- This IS NOT expected if you are initializing Bert from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassifi
+cation model).
+Some weights of Bert were not initialized from the model checkpoint at ../pretrained_models/medbert and are newly initialized: ['classifier.weight', 'classifier.bias', 'relative_pos_embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  7%|██████████▉                                                                                                                                                          | 99/1488 [02:09<30:18,  1.31s/it][
+99/1488],train loss is:0.987492
+ 13%|█████████████████████▉                                                                                                                                              | 199/1488 [04:20<28:05,  1.31s/it][
+199/1488],train loss is:0.871981
+ 20%|████████████████████████████████▉                                                                                                                                   | 299/1488 [06:31<25:52,  1.31s/it][
+299/1488],train loss is:0.813151
+ 27%|███████████████████████████████████████████▉                                                                                                                        | 399/1488 [08:41<23:40,  1.30s/it][
+399/1488],train loss is:0.778414
+ 34%|██████████████████████████████████████████████████████▉                                                                                                             | 499/1488 [10:52<21:35,  1.31s/it][
+499/1488],train loss is:0.757828
+ 40%|██████████████████████████████████████████████████████████████████                                                                                                  | 599/1488 [13:03<19:24,  1.31s/it][
+599/1488],train loss is:0.741981
+ 47%|█████████████████████████████████████████████████████████████████████████████                                                                                       | 699/1488 [15:14<17:14,  1.31s/it][
+699/1488],train loss is:0.730366
+ 54%|████████████████████████████████████████████████████████████████████████████████████████                                                                            | 799/1488 [17:25<15:02,  1.31s/it][
+799/1488],train loss is:0.720083
+ 60%|███████████████████████████████████████████████████████████████████████████████████████████████████                                                                 | 899/1488 [19:36<12:51,  1.31s/it][
+899/1488],train loss is:0.711980
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                      | 999/1488 [21:47<10:40,  1.31s/it][
+999/1488],train loss is:0.704499
+ 74%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                          | 1099/1488 [23:57<08:29,  1.31s/it][
+1099/1488],train loss is:0.697962
+ 81%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                               | 1199/1488 [26:08<06:17,  1.31s/it][
+1199/1488],train loss is:0.693280
+ 87%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                    | 1299/1488 [28:23<04:07,  1.31s/it][
+1299/1488],train loss is:0.689340
+ 94%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 1399/1488 [30:34<01:56,  1.31s/it][
+1399/1488],train loss is:0.684911
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1488/1488 [32:29<00:00,  1.31s/it]
+epoch:[0],train loss is:0.681558
+
+classification_report:
+               precision    recall  f1-score   support
+
+         不标注       0.79      0.74      0.76      4798
+          其他       0.61      0.57      0.59      1203
+          阳性       0.90      0.93      0.91     14918
+          阴性       0.85      0.83      0.84      2876
+
+    accuracy                           0.86     23795
+   macro avg       0.79      0.77      0.78     23795
+weighted avg       0.86      0.86      0.86     23795
+
+confusion_matrix_:
+ [[ 3538    85  1061   114]
+ [  116   690   267   130]
+ [  709   186 13853   170]
+ [  107   174   195  2400]]
